@@ -1,0 +1,43 @@
+            /* 3- Write a program and ask the user to enter 5 numbers. If a number has been previously entered, display an error message and ask the user to re-try. Once the user successfully 
+                  enters 5 unique numbers, sort them and display the result on the console. */
+
+            var number = new int[5];
+            Console.WriteLine("Enter 5 unique numbers");
+
+            for (int i = 0; i < 5; i++)
+            {
+                number[i] = Convert.ToInt32(Console.ReadLine());
+                var numberValue = number[i];
+
+                foreach (var n in number)
+                {
+                    if (number[i] == number[0])
+                    {
+                        break;
+                    }
+                    else
+                    {
+                        if (!(n == numberValue))
+                        {
+                            continue;
+                        }
+                        else
+                        {
+                            Console.WriteLine("Hold on, you already entered a duplicate number. Try again.");
+                        }
+                    }
+                }
+                continue;
+            }
+
+            Array.Sort(number);
+            Console.WriteLine();
+
+            foreach (var n in number)
+                Console.WriteLine(n);
+
+            Console.WriteLine();
+            
+            // te, di ko talaga magawa yan. gusto ko, isa isa ko i-e-enter yung number. let say nag enter ako ng 5, 3, 2, 2, - pagka enter ko 
+            // ng 2, sasabihin ng program yung nasa writeline message. pag nakapag enter ng 5 unique numbers yung user, iso-sort niya yung
+            // entered numbers. di ko magawa yung sa pag check ng duplicate entry eh. pano ba?
